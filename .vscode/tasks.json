@@ -1,0 +1,52 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C++ custom build active file",
+            "command": "/usr/bin/g++",
+             "args": [
+                "-g",
+                // "-fdiagnostics-color=always",
+                "${fileDirname}/*.cpp",
+                "${fileDirname}/includes/*.cpp",
+                "-o",
+                // "${fileDirname}/${fileBasenameNoExtension}",
+                "${fileDirname}/program"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+        
+            },
+             "problemMatcher": ["$gcc"],
+             "group": "build",
+             "detail": "custom g++ build active file",
+        },
+        {
+            "type": "shell",
+            "label": "C++ custom run active file",
+            "command": "bash", "args": [
+                "-c",
+                // "${fileDirname}/${fileBasenameNoExtension}",
+                "${fileDirname}/program" 
+            ],
+            "options": {
+                "cwd": "${fileDirname}" 
+            }, 
+            "group": "test", "dependsOn": ["C++ custom build active file"],
+        },
+        {
+            "type": "shell",
+            "label": "C++ Custom Build and Run",
+            "command": "rm",
+            "args": [
+                "${fileDirname}/program"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "group": "test",
+            "dependsOn": ["C++ custom run active file"],
+        }
+    ]
+}
