@@ -10,9 +10,7 @@ CNgay::CNgay(int day, int month, int year){
 CNgay::CNgay(const CNgay &ngay){
     ng = ngay.ng; th = ngay.th; nm = ngay.nm;
 }
-CNgay::~CNgay(){
-    cout << "Destruct ...";
-}
+
 istream& operator >> (istream &is, CNgay &ngay){
     cout << "Nhap ngay: "; is >> ngay.ng;
     cout << "Nhap thang: "; is >> ngay.th;

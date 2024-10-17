@@ -2,6 +2,8 @@
 
 using namespace std;
 
+#ifndef CNgay_H
+#define CNgay_H
 class CNgay {
     private:
         int ng;
@@ -11,9 +13,10 @@ class CNgay {
         CNgay();
         CNgay(int day, int month, int year);
         CNgay(const CNgay &ngay);
-        ~CNgay();
         friend istream& operator >> (istream &is, CNgay &ngay);
         friend ostream& operator << (ostream &os, CNgay &ngay);
         //CNgay KeTiep();
         int KTNhuan();
 };
+
+#endif

@@ -1,5 +1,7 @@
 #include "CNhanVien.h"
 
+#ifndef CCongTy_H
+#define CCongTy_H
 class CCongTy
 {
     protected:
@@ -8,9 +10,11 @@ class CCongTy
     public:
         CCongTy();
         CCongTy(int);
-        void Nhap(int, CNhanVien);
+        void Nhap(int, CNhanVien*);
         void TinhLuong();
         void Xuat();
         float TongLuong();
-        CNhanVien* TimKiem(char []);
+        CNhanVien* TimKiem(string);
 };
+
+#endif

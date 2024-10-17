@@ -7,7 +7,7 @@ CCongTy::CCongTy(int k){
     n = k;
 }
 
-CNhanVien* CCongTy::TimKiem(char ht[]){
+CNhanVien* CCongTy::TimKiem(string ht){
     for(int i=0;i<n;i++)
     {
         CNhanVien *kq;
@@ -31,6 +31,10 @@ void CCongTy::TinhLuong(){
         ds[i]->TinhLuong();
 }
 
-void CCongTy::Nhap(int i, CNhanVien nv){
-   *ds[i] = nv;
+void CCongTy::Nhap(int i, CNhanVien *nv){
+   ds[i] = nv;
+}
+
+void CCongTy::Xuat(){
+    cout << "Tổng lương của " << n << " nhân viên trong công ty là: " << TongLuong() << endl;
 }

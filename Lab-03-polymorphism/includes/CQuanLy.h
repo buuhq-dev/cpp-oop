@@ -1,13 +1,17 @@
 #include "CNhanVien.h"
+
+#ifndef CQuanLy_H
+#define CQuanLy_H
 class CQuanLy:public CNhanVien
 {
     protected:
         float hscv;
         float thuong;
     public:
-        virtual void Nhap(char ht[31]);
+        void Nhap(string ht, CNgay ng, float l, float lcoban, float hschucvu, float thg);
         void TinhLuong();
-        void Xuat();
+        //void Xuat();
         float LayLuong();
-        CNhanVien* TimKiem(char []);
+        CNhanVien* TimKiem(string);
 };
+#endif
